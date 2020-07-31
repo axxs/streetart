@@ -1,0 +1,11 @@
+<div id="available-locations" v-cloak>
+<H1>Locations</H1>
+<p>View the available Locations, or upload a location.</p>
+
+<ul>
+	<li v-for="location in locations" @click="clickLocation(location.id)">{{location.address}}</li>
+</ul>
+
+
+</div>
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
