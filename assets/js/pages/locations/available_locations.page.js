@@ -25,5 +25,4 @@ parasails.registerPage('available-locations', {
       console.log('clicked Location #'+locationId);
     }
   }
-  
 });

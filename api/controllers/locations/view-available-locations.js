@@ -17,10 +17,9 @@ module.exports = {
 
 
   fn: async function () {
-
-    // Respond with view.
-    return {};
-
+    // todo come back to this and only fetch things the current user is able to see
+    var locations = await Location.find();
+    return {locations};
   }
 
 
