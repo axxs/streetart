@@ -3,7 +3,12 @@
 <p>View the available Locations, or upload a location.</p>
 
 <ul>
-	<li v-for="location in locations" @click="clickLocation(location.id)">{{location.address}}</li>
+	<li v-for="location in locations">{{location.address}} 
+		<button class="btn btn-sm btn-outline-info delete-group-button" @click="clickDeleteLocation(location.id)">
+                  <i class="fe fe-x mr-1"></i>Delete my Group
+        </button>
+
+    </li>
 </ul>
 
 

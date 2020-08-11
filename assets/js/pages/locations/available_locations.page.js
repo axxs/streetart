@@ -21,8 +21,11 @@ parasails.registerPage('available-locations', {
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
-    clickLocation: function (locationId) {
+    clickDeleteLocation: async function (locationId) {
       console.log('clicked Location #'+locationId);
+      await Cloud.destroyOneLocation.with({ id: locationId });
+      _.remove(this.locations, { id: locationId });
+      this.$forceUpdate();
     }
   }
 });
