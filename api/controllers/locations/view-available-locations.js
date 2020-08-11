@@ -18,7 +18,10 @@ module.exports = {
 
   fn: async function () {
     // todo come back to this and only fetch things the current user is able to see
-    var locations = await Location.find();
+    var locations = await Location.find({
+      owner: this.req.me.id
+    });
+ 
     return {locations};
   }
 
